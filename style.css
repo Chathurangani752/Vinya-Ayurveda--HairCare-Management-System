@@ -1,0 +1,75 @@
+
+/* Vinya Ayurveda Brand Styling */
+
+:root {
+    --brand-gold: #c59b27;
+    --brand-gold-hover: #a37f1e;
+    --brand-dark: #1a1a1a;
+    --brand-light-bg: #f8f6f0;
+}
+
+/* Announcement Top Bar */
+.top-bar {
+    background-color: var(--brand-dark);
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+/* Custom Gold Accent Buttons */
+.btn-vinya {
+    background-color: var(--brand-gold);
+    color: #ffffff !important;
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vinya:hover {
+    background-color: var(--brand-gold-hover);
+}
+
+.text-vinya {
+    color: var(--brand-gold) !important;
+}
+
+/* Hero Section with Background Image Overlay */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 120px 0;
+}
+
+/* Feature Cards Styling */
+.custom-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Backgrounds */
+.bg-warm {
+    background-color: var(--brand-light-bg);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--brand-dark);
+    color: #cccccc;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--brand-gold);
+}
