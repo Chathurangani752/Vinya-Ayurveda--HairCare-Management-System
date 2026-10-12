@@ -1,163 +1,209 @@
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* BLACK, ASH AND YELLOW COLOUR THEME */
+:root {
+    --black: #171717;
+    --black-soft: #242424;
+    --ash: #eeeeee;
+    --ash-dark: #d2d2d2;
+    --yellow: #f2c230;
+    --yellow-hover: #dfad13;
+    --text: #252525;
 }
 
-/* Page background */
+/* General page */
 body {
+    background-color: var(--ash);
+    color: var(--text);
     font-family: Arial, sans-serif;
-    background: #D8C8A8;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    color: #222222;
+    margin: 0;
 }
 
-/* Login and Registration card */
-#loginPage,
-#registerPage {
-    background: #FFFFFF;
-    width: 100%;
-    max-width: 430px;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #E8DFC5;
-    box-shadow: 0 8px 30px rgba(65, 52, 20, 0.12);
-    text-align: center;
+/* Navigation bar */
+.navbar {
+    background-color: var(--black);
 }
 
-/* Website heading */
-h1 {
-    color: #B79524;
-    font-size: 30px;
+.navbar-brand {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+.navbar-brand:hover {
+    color: #ffe58a;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--yellow);
+}
+
+/* Welcome section */
+.welcome {
+    background: linear-gradient(135deg, #f7f7f7, #d8d8d8);
+    border-bottom: 4px solid var(--yellow);
+    padding: 55px 15px;
+}
+
+.welcome h1 {
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    color: #454545;
+}
+
+.small-heading {
+    color: #6d5700 !important;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Main cards */
+.section-card {
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.section-card h2 {
+    color: var(--black);
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 12px;
+    border-left: 5px solid var(--yellow);
+    padding-left: 12px;
+}
+
+.section-card h3 {
+    color: var(--black);
+    font-size: 19px;
+}
+
+/* Form labels and fields */
+.form-label {
+    font-weight: bold;
+    color: #333333;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #c7a11e;
+    box-shadow: 0 0 0 0.2rem rgba(242, 194, 48, 0.25);
+}
+
+/* Yellow buttons */
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--black);
+    border: 1px solid var(--yellow);
+    border-radius: 7px;
+    padding: 10px 20px;
     font-weight: bold;
 }
 
-/* Subheadings */
-h2 {
-    color: #333333;
-    margin-bottom: 20px;
+.btn-yellow:hover,
+.btn-yellow:focus {
+    background-color: var(--yellow-hover);
+    border-color: var(--yellow-hover);
+    color: var(--black);
 }
 
-/* Paragraphs */
-p {
-    color: #666666;
-    font-size: 14px;
+.btn-outline-warning {
+    color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.btn-outline-warning:hover {
+    color: var(--black);
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+/* Recommendation cards */
+.recommendation-card {
+    background-color: #f3f3f3;
+    border: 1px solid #dddddd;
+    border-top: 4px solid var(--yellow);
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+}
+
+.recommendation-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.recommendation-card p {
+    margin-bottom: 0;
     line-height: 1.6;
-    margin: 15px 0;
 }
 
-/* Form labels */
-label {
-    display: block;
-    text-align: left;
+/* Messages */
+.status-message {
     color: #333333;
-    font-size: 14px;
     font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 7px;
 }
 
-/* Input fields */
-input {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #D8D2C3;
-    border-radius: 6px;
-    background: #FFFEFA;
-    color: #222222;
-    font-size: 15px;
-    outline: none;
-    transition: 0.3s;
+/* Table */
+.table thead th {
+    background-color: var(--black-soft);
+    color: var(--yellow);
+    white-space: nowrap;
 }
 
-/* When clicking an input */
-input:focus {
-    border-color: #C5A028;
-    box-shadow: 0 0 5px rgba(197, 160, 40, 0.25);
+.table td {
+    overflow-wrap: anywhere;
 }
 
-/* Main buttons */
-button {
-    width: 100%;
-    padding: 13px;
-    margin-top: 18px;
-    border: 1px solid #C5A028;
-    border-radius: 6px;
-    background: #C5A028;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+.table-hover tbody tr:hover {
+    background-color: #fff9df;
 }
 
-/* Hover effect */
-button:hover {
-    background: #AA8619;
-    border-color: #AA8619;
-    transform: translateY(-1px);
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: #ffffff;
+    border-top: 4px solid var(--yellow);
 }
 
-/* Create Account button */
-#loginPage button[type="button"] {
-    background: #FFFFFF;
-    color: #B79524;
-    border: 1px solid #C5A028;
+footer a {
+    color: var(--yellow);
 }
 
-#loginPage button[type="button"]:hover {
-    background: #C5A028;
-    color: #FFFFFF;
+footer a:hover {
+    color: #ffe58a;
 }
 
-/* Back to Login button */
-#registerPage button[type="button"] {
-    background: #FFFFFF;
-    color: #68734A;
-    border: 1px solid #68734A;
-}
-
-#registerPage button[type="button"]:hover {
-    background: #68734A;
-    color: #FFFFFF;
-}
-
-/* Hidden registration/login section */
-[hidden] {
-    display: none !important;
-}
-
-/* Small decorative line */
-#loginPage h1::after,
-#registerPage h1::after {
-    content: "";
-    display: block;
-    width: 55px;
-    height: 3px;
-    background: #C5A028;
-    margin: 15px auto 0;
-    border-radius: 2px;
-}
-
-/* Mobile-friendly design */
-@media (max-width: 480px) {
-    body {
-        padding: 15px;
+/* Mobile screen */
+@media (max-width: 576px) {
+    .welcome {
+        padding: 35px 12px;
     }
 
-    #loginPage,
-    #registerPage {
-        padding: 28px 22px;
+    .welcome h1 {
+        font-size: 28px;
     }
 
-    h1 {
-        font-size: 25px;
+    .section-card h2 {
+        font-size: 21px;
+    }
+
+    .section-card .card-body {
+        padding: 20px !important;
     }
 }
