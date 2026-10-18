@@ -1,1 +1,0 @@
-# Vinya-Ayurveda--HairCare-Management-System

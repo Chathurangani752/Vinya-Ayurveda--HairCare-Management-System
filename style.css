@@ -1,209 +1,117 @@
-/* BLACK, ASH AND YELLOW COLOUR THEME */
+
+/* Custom Styles for Vinya Ayurveda Smart Hair Care System */
+
 :root {
-    --black: #171717;
-    --black-soft: #242424;
-    --ash: #eeeeee;
-    --ash-dark: #d2d2d2;
-    --yellow: #f2c230;
-    --yellow-hover: #dfad13;
-    --text: #252525;
+    --vinya-gold: #c59b27;
+    --vinya-gold-dark: #a37f1e;
+    --vinya-bg-light: #fdfbf7;
 }
 
-/* General page */
 body {
-    background-color: var(--ash);
-    color: var(--text);
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color: #ffffff;
 }
 
-/* Navigation bar */
-.navbar {
-    background-color: var(--black);
+/* 1. Top Announcement Bar */
+.top-bar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.875rem;
 }
 
-.navbar-brand {
-    font-size: 23px;
-    font-weight: bold;
-    color: var(--yellow);
+/* 2. Navigation & Brand Styles */
+.text-vinya {
+    color: var(--vinya-gold) !important;
 }
 
-.navbar-brand:hover {
-    color: #ffe58a;
+.style-logo {
+    border: 2px solid var(--vinya-gold);
 }
 
 .navbar .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--vinya-gold) !important;
+}
+
+/* Custom Gold Button */
+.btn-vinya {
+    background-color: var(--vinya-gold);
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vinya:hover {
+    background-color: var(--vinya-gold-dark);
+    color: #ffffff !important;
+}
+
+/* 3. Hero Sections & Banners */
+.hero-section {
     color: #ffffff;
+    padding: 80px 0;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: var(--yellow);
+.style-width {
+    max-width: 700px;
 }
 
-/* Welcome section */
-.welcome {
-    background: linear-gradient(135deg, #f7f7f7, #d8d8d8);
-    border-bottom: 4px solid var(--yellow);
-    padding: 55px 15px;
+.font-style-italic {
+    font-style: italic;
 }
 
-.welcome h1 {
-    color: var(--black);
-    font-weight: bold;
-    margin-bottom: 15px;
+/* Background Color Accents */
+.bg-warm {
+    background-color: var(--vinya-bg-light);
 }
 
-.welcome p {
-    color: #454545;
+/* 4. Cards & Product Styling */
+.custom-card {
+    border: 1px solid #eef0f2;
+    border-radius: 12px;
+    transition: transform 0.3s ease, shadow 0.3s ease;
 }
 
-.small-heading {
-    color: #6d5700 !important;
-    letter-spacing: 2px;
-    font-weight: bold;
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-/* Main cards */
-.section-card {
-    background-color: #ffffff;
-    border: 1px solid #dedede;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+.card-img-top {
+    transition: opacity 0.3s ease;
 }
 
-.section-card h2 {
-    color: var(--black);
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 12px;
-    border-left: 5px solid var(--yellow);
-    padding-left: 12px;
+.card-img-top:hover {
+    opacity: 0.9;
 }
 
-.section-card h3 {
-    color: var(--black);
-    font-size: 19px;
+/* 5. Modals (Popup Details) */
+.modal-content {
+    border-radius: 12px;
+    border: none;
 }
 
-/* Form labels and fields */
-.form-label {
-    font-weight: bold;
-    color: #333333;
+.modal-header .btn-close {
+    outline: none;
 }
 
-.form-control,
-.form-select {
-    border: 1px solid #c9c9c9;
-    border-radius: 7px;
-    padding: 10px;
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: #c7a11e;
-    box-shadow: 0 0 0 0.2rem rgba(242, 194, 48, 0.25);
-}
-
-/* Yellow buttons */
-.btn-yellow {
-    background-color: var(--yellow);
-    color: var(--black);
-    border: 1px solid var(--yellow);
-    border-radius: 7px;
-    padding: 10px 20px;
-    font-weight: bold;
-}
-
-.btn-yellow:hover,
-.btn-yellow:focus {
-    background-color: var(--yellow-hover);
-    border-color: var(--yellow-hover);
-    color: var(--black);
-}
-
-.btn-outline-warning {
-    color: var(--yellow);
-    border-color: var(--yellow);
-}
-
-.btn-outline-warning:hover {
-    color: var(--black);
-    background-color: var(--yellow);
-    border-color: var(--yellow);
-}
-
-/* Recommendation cards */
-.recommendation-card {
-    background-color: #f3f3f3;
-    border: 1px solid #dddddd;
-    border-top: 4px solid var(--yellow);
-    border-radius: 10px;
-    padding: 20px;
-    height: 100%;
-}
-
-.recommendation-card h3 {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.recommendation-card p {
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-/* Messages */
-.status-message {
-    color: #333333;
-    font-weight: bold;
-}
-
-/* Table */
-.table thead th {
-    background-color: var(--black-soft);
-    color: var(--yellow);
-    white-space: nowrap;
-}
-
-.table td {
-    overflow-wrap: anywhere;
-}
-
-.table-hover tbody tr:hover {
-    background-color: #fff9df;
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
-    background-color: var(--black);
-    color: #ffffff;
-    border-top: 4px solid var(--yellow);
+    background-color: #1a1a1a;
+    color: #cccccc;
 }
 
 footer a {
-    color: var(--yellow);
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #ffe58a;
-}
-
-/* Mobile screen */
-@media (max-width: 576px) {
-    .welcome {
-        padding: 35px 12px;
-    }
-
-    .welcome h1 {
-        font-size: 28px;
-    }
-
-    .section-card h2 {
-        font-size: 21px;
-    }
-
-    .section-card .card-body {
-        padding: 20px !important;
-    }
+    color: var(--vinya-gold);
 }

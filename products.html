@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online - Vinya Ayurveda</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Project Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Top Announcement Bar -->
+    <div class="top-bar py-2 text-center">
+        <div class="container">
+            <span>Phone: +61 460 715 528 | Email: vinyaayurvedahairoil@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- 2. Main Navigation Bar (SHOP ONLINE placed AFTER PROGRESS TRACKER) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container">
+            <!-- Logo Image (60px) + Gold Brand Name -->
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-3 text-vinya" href="index.html">
+                <img src="images/logo.jpeg" alt="Vinya Ayurveda Logo" class="me-2 rounded-circle style-logo" style="height: 60px; width: 60px; object-fit: cover;">
+                <span>Vinya Ayurveda</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto ms-lg-4 fw-semibold">
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="assessment.html">HAIR QUIZ</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="recommendation.html">RECOMMENDATIONS</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="progress.html">PROGRESS TRACKER</a></li>
+                    <li class="nav-item"><a class="nav-link active text-vinya" href="products.html">SHOP ONLINE</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="contact.html">CONTACT</a></li>
+                </ul>
+
+                <!-- Search Bar Form -->
+                <form class="d-flex me-lg-2 my-2 my-lg-0" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+
+                <a class="btn btn-vinya px-3" href="login.html">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Shop Banner Header -->
+    <section class="hero-section text-center py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.webp') center/cover no-repeat;">
+        <div class="container py-3">
+            <h1 class="display-4 fw-bold text-light font-style-italic">Shop Online Now</h1>
+        </div>
+    </section>
+
+    <!-- 4. Products Grid Section -->
+    <section class="container py-5">
+        <div class="row g-4">
+            
+            <!-- Product 1: Bundle Pack -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 text-center p-3 position-relative">
+                    <span class="badge bg-secondary position-absolute top-0 start-0 m-3 px-3 py-2">SOLD OUT</span>
+                    <img src="images/bundlePack.jpeg" class="card-img-top rounded-3 my-2" alt="Value Pack" style="height: 250px; object-fit: cover; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#bundleModal">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold text-uppercase">VINYA AYURVEDA BUNDLE - VALUE PACK</h6>
+                        <span class="badge bg-danger w-50 mx-auto my-2 py-2">Out of Stock</span>
+                        <h5 class="fw-bold text-dark mt-auto mb-3">AU$68.00</h5>
+                        <button class="btn btn-outline-secondary w-100 py-2" data-bs-toggle="modal" data-bs-target="#bundleModal">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Hair Oil 250ml -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 text-center p-3 position-relative">
+                    <span class="badge bg-dark position-absolute top-0 end-0 m-3 px-3 py-2">ON SALE</span>
+                    <img src="images/oilsBottle.jpeg" class="card-img-top rounded-3 my-2" alt="Hair Oil 250ml" style="height: 250px; object-fit: cover; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#oil250Modal">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold text-uppercase">VINYA AYURVEDA HAIR OIL - 250ML</h6>
+                        <div class="my-2">
+                            <span class="fw-bold text-vinya fs-5">AU$40.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2">AU$50.00</span>
+                        </div>
+                        <button class="btn btn-vinya w-100 py-2 mt-auto" data-bs-toggle="modal" data-bs-target="#oil250Modal">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Hair Oil 100ml -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 text-center p-3 position-relative">
+                    <span class="badge bg-dark position-absolute top-0 end-0 m-3 px-3 py-2">ON SALE</span>
+                    <img src="images/hairOil.jpeg" class="card-img-top rounded-3 my-2" alt="Hair Oil 100ml" style="height: 250px; object-fit: cover; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#oil100Modal">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold text-uppercase">VINYA AYURVEDA HAIR OIL - 100ML</h6>
+                        <div class="my-2">
+                            <span class="fw-bold text-vinya fs-5">AU$18.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2">AU$22.00</span>
+                        </div>
+                        <button class="btn btn-vinya w-100 py-2 mt-auto" data-bs-toggle="modal" data-bs-target="#oil100Modal">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Shampoo Bar -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 text-center p-3 position-relative">
+                    <span class="badge bg-secondary position-absolute top-0 start-0 m-3 px-3 py-2">SOLD OUT</span>
+                    <img src="images/soapImage.jpeg" class="card-img-top rounded-3 my-2" alt="Shampoo Bar" style="height: 250px; object-fit: cover; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#shampooModal">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold text-uppercase">VINYA AYURVEDA SHAMPOO BAR</h6>
+                        <span class="badge bg-danger w-50 mx-auto my-2 py-2">Out of Stock</span>
+                        <h5 class="fw-bold text-dark mt-auto mb-3">AU$22.00</h5>
+                        <button class="btn btn-outline-secondary w-100 py-2" data-bs-toggle="modal" data-bs-target="#shampooModal">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Gift Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 text-center p-3">
+                    <img src="images/giftVoucher.jpeg" class="card-img-top rounded-3 my-2" alt="Gift Card" style="height: 250px; object-fit: cover; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#giftModal">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold text-uppercase">GIFT CARD</h6>
+                        <h5 class="fw-bold text-vinya my-2">AU$100.00</h5>
+                        <button class="btn btn-vinya w-100 py-2 mt-auto" data-bs-toggle="modal" data-bs-target="#giftModal">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= MODALS (Popup Details) ================= -->
+
+    <!-- Bundle Modal -->
+    <div class="modal fade" id="bundleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/shampoo-bar.jpg" class="img-fluid rounded-3" alt="Bundle Pack">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold">VINYA AYURVEDA BUNDLE - VALUE PACK</h4>
+                            <h3 class="fw-bold text-dark my-2">AU$68.00</h3>
+                            <span class="badge bg-danger mb-3">Sold out</span>
+                            <p class="small text-muted mb-2">CONTAINS: HAIR OIL 250ml + HAIR OIL 100ml + SHAMPOO BAR</p>
+                            <ul class="small text-muted ps-3">
+                                <li>Good for hair growth and to maintain scalp health</li>
+                                <li>Prevent hair loss and thinning</li>
+                                <li>Help to control dandruff and itchy scalp</li>
+                                <li>Recover from Chemotherapy hair loss</li>
+                                <li>Recover from postpartum hair loss</li>
+                                <li>Highly nourishing, healing and lubricating</li>
+                                <li>Reduce migraine & headache</li>
+                                <li>Moisturize the scalp while getting rid of dead hair follicles</li>
+                                <li>Helps in improving blood circulation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hair Oil 250ml Modal -->
+    <div class="modal fade" id="oil250Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/hair-oil.jpg" class="img-fluid rounded-3" alt="Hair Oil 250ml">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold">VINYA AYURVEDA HAIR OIL - 250ML</h4>
+                            <div class="my-2">
+                                <span class="fw-bold text-vinya fs-3">AU$40.00</span>
+                                <span class="text-muted text-decoration-line-through ms-2">AU$50.00</span>
+                                <span class="badge bg-warning text-dark ms-2">Save 20%</span>
+                            </div>
+                            <p class="small text-success fw-bold">In stock</p>
+                            <p class="text-muted small">Special formula designed to reduce hair fall, promote healthy scalp, long hair growth, and control dandruff effectively.</p>
+                            <h6 class="fw-bold small">How to Use:</h6>
+                            <p class="small text-muted mb-3">Apply oil to the scalp and length of hair. Give a gentle massage and leave for at least 3 hours or overnight before washing off.</p>
+                            <div class="mb-3 d-flex align-items-center">
+                                <label class="me-2 small fw-bold">Quantity:</label>
+                                <input type="number" class="form-control" value="1" min="1" style="width: 80px;">
+                            </div>
+                            <button class="btn btn-vinya w-100 py-2 mb-3">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hair Oil 100ml Modal -->
+    <div class="modal fade" id="oil100Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/hair-oil.jpg" class="img-fluid rounded-3" alt="Hair Oil 100ml">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold">VINYA AYURVEDA HAIR OIL - 100ML</h4>
+                            <div class="my-2">
+                                <span class="fw-bold text-vinya fs-3">AU$18.00</span>
+                                <span class="text-muted text-decoration-line-through ms-2">AU$22.00</span>
+                                <span class="badge bg-warning text-dark ms-2">Save 18%</span>
+                            </div>
+                            <p class="small text-success fw-bold">In stock</p>
+                            <p class="text-muted small">Special formula designed to reduce hair fall, promote healthy scalp, long hair growth, and control dandruff effectively.</p>
+                            <h6 class="fw-bold small">How to Use:</h6>
+                            <p class="small text-muted mb-3">Apply oil to the scalp and length of hair. Give a gentle massage and leave for at least 3 hours or overnight before washing off.</p>
+                            <div class="mb-3 d-flex align-items-center">
+                                <label class="me-2 small fw-bold">Quantity:</label>
+                                <input type="number" class="form-control" value="1" min="1" style="width: 80px;">
+                            </div>
+                            <button class="btn btn-vinya w-100 py-2 mb-3">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shampoo Bar Modal -->
+    <div class="modal fade" id="shampooModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/shampoo-bar.jpg" class="img-fluid rounded-3" alt="Shampoo Bar">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold">VINYA AYURVEDA SHAMPOO BAR</h4>
+                            <h3 class="fw-bold text-dark my-2">AU$22.00</h3>
+                            <span class="badge bg-danger mb-3">Sold out</span>
+                            <p class="text-muted small">100% Natural, Australian Homemade Ayurvedic Shampoo Bar created to nourish hair follicles and provide deep cleansing without synthetic chemicals.</p>
+                            <h6 class="fw-bold small">Ingredients:</h6>
+                            <p class="small text-muted">Shikakai, Aritha, Amla, Olive Oil, Castor Oil, Shea Butter, Ginger, Tulsi, Neem & Essential Oil.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gift Card Modal -->
+    <div class="modal fade" id="giftModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/gift-card.jpg" class="img-fluid rounded-3" alt="Gift Card">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold">GIFT CARD</h4>
+                            <h3 class="fw-bold text-vinya my-2">AU$100.00</h3>
+                            <p class="text-muted small">Purchasing this digital gift card creates a unique code. The gift card recipient can enter this code at checkout to subtract the gift card value from their order total.</p>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Select Gift Card Amount:</label>
+                                <div>
+                                    <input type="radio" id="g50" name="gift" class="form-check-input">
+                                    <label for="g50" class="me-3 small">AU$50.00</label>
+                                    <input type="radio" id="g100" name="gift" class="form-check-input" checked>
+                                    <label for="g100" class="small">AU$100.00</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-vinya w-100 py-2">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-vinya mb-3">Vinya Ayurveda</h5>
+                    <p class="small">Smart Hair-Care Assessment and Progress Management System. Combining natural Ayurvedic tradition with personalized diagnostic care.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="assessment.html">Take Assessment</a></li>
+                        <li class="mb-2"><a href="recommendation.html">Recommendations</a></li>
+                        <li class="mb-2"><a href="progress.html">Progress Tracker</a></li>
+                        <li class="mb-2"><a href="products.html">Shop Online</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <p class="small mb-2">Phone: +61 460 715 528</p>
+                    <p class="small mb-2">Email: vinyaayurvedahairoil@gmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Our Locations</h5>
+                    <ul class="list-unstyled small text-light">
+                        <li class="mb-2">📍 Stores in Australia</li>
+                        <li class="mb-2">📍 Stores in New Zealand</li>
+                        <li class="mb-2 text-vinya fw-semibold">✨ Coming up in Sri Lanka</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <div class="text-center small">
+                © 2026 Vinya Ayurveda. All rights reserved. Developed by Group 21 - Team Tetro.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
