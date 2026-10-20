@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Vinya Ayurveda</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Same theme as the homepage -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#c29227',
+                        brandGoldHover: '#a3791f',
+                        brandLightBg: '#fbf9f4'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brandLightBg font-sans text-gray-800">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="bg-black text-gray-200 text-xs py-2 px-4 text-center">
+        Phone: +61 460 715 528 |
+        vinyaayurvedahairoil@gmail.com
+    </div>
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm px-5 md:px-8 py-4">
+        <div class="max-w-screen-2xl mx-auto flex justify-between items-center gap-4">
+
+            <a href="index.html"
+               class="text-xl sm:text-2xl font-bold text-brandGold">
+                Vinya Ayurveda
+            </a>
+
+            <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-sm text-gray-500">
+                    Administrator
+                </span>
+
+                <div class="w-10 h-10 rounded-full bg-amber-100
+                            text-brandGold flex items-center justify-center">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="max-w-screen-2xl mx-auto md:flex min-h-screen">
+
+        <!-- SIDEBAR -->
+        <aside class="md:w-64 bg-white border-r border-gray-200 p-5">
+
+            <p class="text-xs font-semibold text-gray-400 uppercase
+                      tracking-wider mb-5">
+                Administration
+            </p>
+
+            <nav class="space-y-2">
+
+                <button onclick="showSection('dashboard')"
+                        class="nav-button w-full flex items-center gap-3
+                               p-3 rounded-lg text-left bg-amber-50
+                               text-brandGold font-semibold">
+                    <i class="fa-solid fa-chart-pie w-5"></i>
+                    Dashboard
+                </button>
+
+                <button onclick="showSection('customers')"
+                        class="nav-button w-full flex items-center gap-3
+                               p-3 rounded-lg text-left hover:bg-amber-50">
+                    <i class="fa-solid fa-users w-5"></i>
+                    Customers
+                </button>
+
+                <button onclick="showSection('products')"
+                        class="nav-button w-full flex items-center gap-3
+                               p-3 rounded-lg text-left hover:bg-amber-50">
+                    <i class="fa-solid fa-bottle-droplet w-5"></i>
+                    Products
+                </button>
+
+                <button onclick="showSection('rules')"
+                        class="nav-button w-full flex items-center gap-3
+                               p-3 rounded-lg text-left hover:bg-amber-50">
+                    <i class="fa-solid fa-sliders w-5"></i>
+                    Recommendation Rules
+                </button>
+
+            </nav>
+
+            <div class="border-t mt-8 pt-5 space-y-3 text-sm">
+
+                <a href="index.html"
+                   class="flex items-center gap-3 p-2 hover:text-brandGold">
+                    <i class="fa-solid fa-house w-5"></i>
+                    View Website
+                </a>
+
+                <a href="progress.html"
+                   class="flex items-center gap-3 p-2 hover:text-brandGold">
+                    <i class="fa-solid fa-chart-line w-5"></i>
+                    Progress Page
+                </a>
+
+            </div>
+
+            <p class="text-xs text-gray-400 mt-8">
+                Vinya Ayurveda<br>
+                Admin Panel • Group 21
+            </p>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 min-w-0 p-5 md:p-8">
+
+            <!-- DASHBOARD SECTION -->
+            <section id="dashboard" class="admin-section">
+
+                <div class="mb-8">
+                    <p class="text-brandGold text-sm font-semibold">
+                        VINYA AYURVEDA
+                    </p>
+
+                    <h1 class="text-2xl md:text-3xl font-bold mt-2">
+                        Admin Dashboard
+                    </h1>
+
+                    <p class="text-sm text-gray-500 mt-2">
+                        Manage customers, products and hair-care
+                        recommendation rules.
+                    </p>
+                </div>
+
+                <!-- SUMMARY CARDS -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
+
+                    <div class="bg-white border rounded-xl p-5 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-gray-500 text-sm">
+                                    Customers
+                                </p>
+                                <h2 id="customerCount"
+                                    class="text-3xl font-bold mt-2">
+                                    3
+                                </h2>
+                            </div>
+
+                            <div class="bg-amber-100 text-brandGold
+                                        w-12 h-12 rounded-lg flex
+                                        items-center justify-center">
+                                <i class="fa-solid fa-users text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-5 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-gray-500 text-sm">
+                                    Products
+                                </p>
+                                <h2 id="productCount"
+                                    class="text-3xl font-bold mt-2">
+                                    3
+                                </h2>
+                            </div>
+
+                            <div class="bg-amber-100 text-brandGold
+                                        w-12 h-12 rounded-lg flex
+                                        items-center justify-center">
+                                <i class="fa-solid fa-bottle-droplet text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-5 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-gray-500 text-sm">
+                                    Assessments
+                                </p>
+                                <h2 id="assessmentCount"
+                                    class="text-3xl font-bold mt-2">
+                                    12
+                                </h2>
+                            </div>
+
+                            <div class="bg-amber-100 text-brandGold
+                                        w-12 h-12 rounded-lg flex
+                                        items-center justify-center">
+                                <i class="fa-solid fa-clipboard-check text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-5 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-gray-500 text-sm">
+                                    Recommendation Rules
+                                </p>
+                                <h2 id="ruleCount"
+                                    class="text-3xl font-bold mt-2">
+                                    3
+                                </h2>
+                            </div>
+
+                            <div class="bg-amber-100 text-brandGold
+                                        w-12 h-12 rounded-lg flex
+                                        items-center justify-center">
+                                <i class="fa-solid fa-sliders text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- OVERVIEW -->
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+                    <div class="bg-white border rounded-xl p-6">
+                        <h2 class="font-bold text-lg mb-2">
+                            Welcome to the Admin Panel
+                        </h2>
+
+                        <p class="text-gray-500 text-sm leading-6">
+                            Use this dashboard to maintain product
+                            information and the predefined rules used
+                            to generate general hair-care recommendations.
+                        </p>
+
+                        <p class="text-xs text-gray-400 mt-4">
+                            Figures displayed here are demonstration
+                            data, not live customer statistics.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-6">
+                        <h2 class="font-bold text-lg mb-4">
+                            Quick Actions
+                        </h2>
+
+                        <div class="space-y-3">
+
+                            <button onclick="showSection('customers')"
+                                    class="w-full text-left border rounded-lg
+                                           p-4 hover:border-brandGold">
+                                <i class="fa-solid fa-users text-brandGold mr-2"></i>
+                                View Customer Records
+                            </button>
+
+                            <button onclick="showSection('products')"
+                                    class="w-full text-left border rounded-lg
+                                           p-4 hover:border-brandGold">
+                                <i class="fa-solid fa-plus text-brandGold mr-2"></i>
+                                Manage Products
+                            </button>
+
+                            <button onclick="showSection('rules')"
+                                    class="w-full text-left border rounded-lg
+                                           p-4 hover:border-brandGold">
+                                <i class="fa-solid fa-sliders text-brandGold mr-2"></i>
+                                Manage Recommendation Rules
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CUSTOMERS SECTION -->
+            <section id="customers" class="admin-section hidden">
+
+                <div class="mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold">
+                        Customer Management
+                    </h1>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        View example customer records.
+                    </p>
+                </div>
+
+                <div class="bg-white border rounded-xl overflow-hidden">
+
+                    <div class="p-5 border-b">
+                        <h2 class="font-bold">Customer Records</h2>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+
+                            <thead class="bg-gray-50 text-gray-600">
+                                <tr>
+                                    <th class="p-4">Customer ID</th>
+                                    <th class="p-4">Name</th>
+                                    <th class="p-4">Email</th>
+                                    <th class="p-4">Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y" id="customerTable">
+                                <tr>
+                                    <td class="p-4">C001</td>
+                                    <td class="p-4">Sample Customer 1</td>
+                                    <td class="p-4">customer1@example.com</td>
+                                    <td class="p-4 text-green-700">Active</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-4">C002</td>
+                                    <td class="p-4">Sample Customer 2</td>
+                                    <td class="p-4">customer2@example.com</td>
+                                    <td class="p-4 text-green-700">Active</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-4">C003</td>
+                                    <td class="p-4">Sample Customer 3</td>
+                                    <td class="p-4">customer3@example.com</td>
+                                    <td class="p-4 text-gray-500">Inactive</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <p class="p-4 text-xs text-gray-400">
+                        Demonstration records only. Real records will
+                        come from the backend database.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- PRODUCTS SECTION -->
+            <section id="products" class="admin-section hidden">
+
+                <div class="mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold">
+                        Product Management
+                    </h1>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Add and review hair-care products.
+                    </p>
+                </div>
+
+                <!-- ADD PRODUCT FORM -->
+                <div class="bg-white border rounded-xl p-6 mb-6">
+
+                    <h2 class="font-bold text-lg mb-5">
+                        Add New Product
+                    </h2>
+
+                    <form id="productForm" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                        <div>
+                            <label for="productName"
+                                   class="block text-sm font-medium mb-2">
+                                Product Name
+                            </label>
+
+                            <input id="productName" type="text"
+                                   required maxlength="100"
+                                   class="w-full border rounded-lg p-3
+                                          focus:outline-none focus:border-brandGold"
+                                   placeholder="Enter product name">
+                        </div>
+
+                        <div>
+                            <label for="productCategory"
+                                   class="block text-sm font-medium mb-2">
+                                Category
+                            </label>
+
+                            <select id="productCategory" required
+                                    class="w-full border rounded-lg p-3
+                                           focus:outline-none focus:border-brandGold">
+                                <option value="Hair Oil">Hair Oil</option>
+                                <option value="Shampoo Bar">Shampoo Bar</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="productPrice"
+                                   class="block text-sm font-medium mb-2">
+                                Price (AUD)
+                            </label>
+
+                            <input id="productPrice" type="number"
+                                   min="0" max="100000" step="0.01" required
+                                   class="w-full border rounded-lg p-3
+                                          focus:outline-none focus:border-brandGold"
+                                   placeholder="e.g. 34.99">
+                        </div>
+
+                        <div>
+                            <label for="productStatus"
+                                   class="block text-sm font-medium mb-2">
+                                Status
+                            </label>
+
+                            <select id="productStatus"
+                                    class="w-full border rounded-lg p-3
+                                           focus:outline-none focus:border-brandGold">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label for="productDescription"
+                                   class="block text-sm font-medium mb-2">
+                                Description
+                            </label>
+
+                            <textarea id="productDescription" rows="3"
+                                      required maxlength="500"
+                                      class="w-full border rounded-lg p-3
+                                             focus:outline-none focus:border-brandGold"
+                                      placeholder="Enter a short product description"></textarea>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <button type="submit"
+                                    class="bg-brandGold hover:bg-brandGoldHover
+                                           text-white px-6 py-3 rounded-lg font-semibold">
+                                <i class="fa-solid fa-plus mr-2"></i>
+                                Add Product
+                            </button>
+
+                            <p id="productMessage"
+                               class="text-sm mt-3" role="status"></p>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- PRODUCT TABLE -->
+                <div class="bg-white border rounded-xl overflow-hidden">
+
+                    <div class="p-5 border-b">
+                        <h2 class="font-bold">Product List</h2>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+
+                            <thead class="bg-gray-50 text-gray-600">
+                                <tr>
+                                    <th class="p-4">Product</th>
+                                    <th class="p-4">Category</th>
+                                    <th class="p-4">Price (AUD)</th>
+                                    <th class="p-4">Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="productTable" class="divide-y">
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- RECOMMENDATION RULES SECTION -->
+            <section id="rules" class="admin-section hidden">
+
+                <div class="mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold">
+                        Recommendation Rules
+                    </h1>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Manage predefined, explainable hair-care guidance.
+                    </p>
+                </div>
+
+                <!-- ADD RULE FORM -->
+                <div class="bg-white border rounded-xl p-6 mb-6">
+
+                    <h2 class="font-bold text-lg mb-5">
+                        Add Recommendation Rule
+                    </h2>
+
+                    <form id="ruleForm" class="space-y-5">
+
+                        <div>
+                            <label for="ruleCondition"
+                                   class="block text-sm font-medium mb-2">
+                                Assessment Condition
+                            </label>
+
+                            <select id="ruleCondition" required
+                                    class="w-full border rounded-lg p-3
+                                           focus:outline-none focus:border-brandGold">
+                                <option value="Dry and Flaky">
+                                    Dry and Flaky Scalp
+                                </option>
+                                <option value="Oily and Greasy">
+                                    Oily and Greasy Scalp
+                                </option>
+                                <option value="Normal / Balanced">
+                                    Normal / Balanced Scalp
+                                </option>
+                                <option value="Sensitive / Itchy">
+                                    Sensitive / Itchy Scalp
+                                </option>
+                                <option value="Excess Hair Fall">
+                                    Concern About Hair Fall
+                                </option>
+                                <option value="Dandruff Control">
+                                    Concern About Dandruff
+                                </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="ruleRecommendation"
+                                   class="block text-sm font-medium mb-2">
+                                Recommendation
+                            </label>
+
+                            <select id="ruleRecommendation" required
+                                    class="w-full border rounded-lg p-3
+                                           focus:outline-none focus:border-brandGold">
+                                <option value="Hair Oil">
+                                    Hair Oil
+                                </option>
+                                <option value="Shampoo Bar">
+                                    Shampoo Bar
+                                </option>
+                                <option value="Both Products">
+                                    Both Products
+                                </option>
+                                <option value="Professional Guidance">
+                                    Suggest Professional Guidance
+                                </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="ruleExplanation"
+                                   class="block text-sm font-medium mb-2">
+                                Explanation
+                            </label>
+
+                            <textarea id="ruleExplanation" required
+                                      maxlength="500" rows="3"
+                                      class="w-full border rounded-lg p-3
+                                             focus:outline-none focus:border-brandGold"
+                                      placeholder="Explain why this general recommendation is shown"></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="bg-brandGold hover:bg-brandGoldHover
+                                       text-white px-6 py-3 rounded-lg font-semibold">
+                            <i class="fa-solid fa-plus mr-2"></i>
+                            Add Rule
+                        </button>
+
+                        <p id="ruleMessage" class="text-sm" role="status"></p>
+
+                    </form>
+
+                </div>
+
+                <!-- RULES TABLE -->
+                <div class="bg-white border rounded-xl overflow-hidden">
+
+                    <div class="p-5 border-b">
+                        <h2 class="font-bold">Existing Rules</h2>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+
+                            <thead class="bg-gray-50 text-gray-600">
+                                <tr>
+                                    <th class="p-4">Condition</th>
+                                    <th class="p-4">Recommendation</th>
+                                    <th class="p-4">Explanation</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="ruleTable" class="divide-y">
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+                <p class="text-xs text-gray-500 mt-4">
+                    These are general hair-care suggestions, not medical
+                    diagnoses or treatment instructions. Rules should be
+                    reviewed and approved before being used.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-center p-5 text-xs">
+        © 2026 Vinya Ayurveda. Developed by Group 21 - Team Tetro.
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Change the visible dashboard section.
+        function showSection(sectionId) {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.classList.remove(
+                    'bg-amber-50',
+                    'text-brandGold',
+                    'font-semibold'
+                );
+            });
+
+            const buttons = document.querySelectorAll('.nav-button');
+            const sectionNames = [
+                'dashboard',
+                'customers',
+                'products',
+                'rules'
+            ];
+
+            const index = sectionNames.indexOf(sectionId);
+
+            if (index !== -1) {
+                buttons[index].classList.add(
+                    'bg-amber-50',
+                    'text-brandGold',
+                    'font-semibold'
+                );
+            }
+        }
+
+        // Demonstration data only.
+        // Replace these arrays with API data when the backend is ready.
+        const customers = [
+            { id: 'C001', name: 'Sample Customer 1',
+              email: 'customer1@example.com', status: 'Active' },
+            { id: 'C002', name: 'Sample Customer 2',
+              email: 'customer2@example.com', status: 'Active' },
+            { id: 'C003', name: 'Sample Customer 3',
+              email: 'customer3@example.com', status: 'Inactive' }
+        ];
+
+        let products = [
+            {
+                name: 'Bhringraj & Neem Hair Oil',
+                category: 'Hair Oil',
+                price: 34.99,
+                status: 'Active',
+                description: 'Example hair oil product.'
+            },
+            {
+                name: 'Amla & Brahmi Hair Tonic',
+                category: 'Hair Oil',
+                price: 38.50,
+                status: 'Active',
+                description: 'Example hair-care product.'
+            },
+            {
+                name: 'Natural Shampoo Bar',
+                category: 'Shampoo Bar',
+                price: 19.99,
+                status: 'Active',
+                description: 'Example shampoo bar.'
+            }
+        ];
+
+        let rules = [
+            {
+                condition: 'Dry and Flaky',
+                recommendation: 'Hair Oil',
+                explanation: 'Consider a suitable hair-care routine for a dry scalp.'
+            },
+            {
+                condition: 'Oily and Greasy',
+                recommendation: 'Shampoo Bar',
+                explanation: 'Consider a suitable cleansing routine.'
+            },
+            {
+                condition: 'Sensitive / Itchy',
+                recommendation: 'Professional Guidance',
+                explanation: 'Seek qualified advice if irritation persists.'
+            }
+        ];
+
+        // Safely create a table cell using text, not HTML strings.
+        function addCell(row, value) {
+            const cell = document.createElement('td');
+            cell.className = 'p-4 align-top';
+            cell.textContent = value;
+            row.appendChild(cell);
+        }
+
+        function renderCustomers() {
+            const table = document.getElementById('customerTable');
+            table.replaceChildren();
+
+            customers.forEach(customer => {
+                const row = document.createElement('tr');
+
+                addCell(row, customer.id);
+                addCell(row, customer.name);
+                addCell(row, customer.email);
+                addCell(row, customer.status);
+
+                table.appendChild(row);
+            });
+
+            document.getElementById('customerCount').textContent =
+                customers.length;
+        }
+
+        function renderProducts() {
+            const table = document.getElementById('productTable');
+            table.replaceChildren();
+
+            products.forEach(product => {
+                const row = document.createElement('tr');
+
+                addCell(row, product.name);
+                addCell(row, product.category);
+                addCell(row, '$' + Number(product.price).toFixed(2));
+                addCell(row, product.status);
+
+                table.appendChild(row);
+            });
+
+            document.getElementById('productCount').textContent =
+                products.length;
+        }
+
+        function renderRules() {
+            const table = document.getElementById('ruleTable');
+            table.replaceChildren();
+
+            rules.forEach(rule => {
+                const row = document.createElement('tr');
+
+                addCell(row, rule.condition);
+                addCell(row, rule.recommendation);
+                addCell(row, rule.explanation);
+
+                table.appendChild(row);
+            });
+
+            document.getElementById('ruleCount').textContent =
+                rules.length;
+        }
+
+        // Add a product to the current demo page.
+        document.getElementById('productForm').addEventListener(
+            'submit', function(event) {
+                event.preventDefault();
+
+                const name =
+                    document.getElementById('productName').value.trim();
+
+                const description =
+                    document.getElementById('productDescription').value.trim();
+
+                const price =
+                    Number(document.getElementById('productPrice').value);
+
+                if (!name || !description ||
+                    !Number.isFinite(price) || price < 0) {
+                    document.getElementById('productMessage').textContent =
+                        'Please enter valid product details.';
+                    return;
+                }
+
+                products.push({
+                    name: name,
+                    category:
+                        document.getElementById('productCategory').value,
+                    price: price,
+                    status:
+                        document.getElementById('productStatus').value,
+                    description: description
+                });
+
+                renderProducts();
+
+                document.getElementById('productMessage').textContent =
+                    'Product added to the demo list.';
+
+                this.reset();
+            }
+        );
+
+        // Add a recommendation rule to the current demo page.
+        document.getElementById('ruleForm').addEventListener(
+            'submit', function(event) {
+                event.preventDefault();
+
+                const explanation =
+                    document.getElementById('ruleExplanation').value.trim();
+
+                if (!explanation) {
+                    document.getElementById('ruleMessage').textContent =
+                        'Please enter an explanation.';
+                    return;
+                }
+
+                rules.push({
+                    condition:
+                        document.getElementById('ruleCondition').value,
+                    recommendation:
+                        document.getElementById('ruleRecommendation').value,
+                    explanation: explanation
+                });
+
+                renderRules();
+
+                document.getElementById('ruleMessage').textContent =
+                    'Rule added to the demo list.';
+
+                this.reset();
+            }
+        );
+
+        // Load the example information.
+        renderCustomers();
+        renderProducts();
+        renderRules();
+    </script>
+
+</body>
+</html>
