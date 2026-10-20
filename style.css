@@ -1,75 +1,163 @@
 
-/* Vinya Ayurveda Brand Styling */
-
-:root {
-    --brand-gold: #c59b27;
-    --brand-gold-hover: #a37f1e;
-    --brand-dark: #1a1a1a;
-    --brand-light-bg: #f8f6f0;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Announcement Top Bar */
-.top-bar {
-    background-color: var(--brand-dark);
-    color: #ffffff;
-    font-size: 0.875rem;
+/* Page background */
+body {
+    font-family: Arial, sans-serif;
+    background: #D8C8A8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #222222;
 }
 
-/* Custom Gold Accent Buttons */
-.btn-vinya {
-    background-color: var(--brand-gold);
-    color: #ffffff !important;
-    border: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+/* Login and Registration card */
+#loginPage,
+#registerPage {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 430px;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #E8DFC5;
+    box-shadow: 0 8px 30px rgba(65, 52, 20, 0.12);
+    text-align: center;
 }
 
-.btn-vinya:hover {
-    background-color: var(--brand-gold-hover);
+/* Website heading */
+h1 {
+    color: #B79524;
+    font-size: 30px;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
 
-.text-vinya {
-    color: var(--brand-gold) !important;
+/* Subheadings */
+h2 {
+    color: #333333;
+    margin-bottom: 20px;
 }
 
-/* Hero Section with Background Image Overlay */
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/hero-bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    padding: 120px 0;
+/* Paragraphs */
+p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0;
 }
 
-/* Feature Cards Styling */
-.custom-card {
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Form labels */
+label {
+    display: block;
+    text-align: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 7px;
 }
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+/* Input fields */
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #D8D2C3;
+    border-radius: 6px;
+    background: #FFFEFA;
+    color: #222222;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
 }
 
-/* Section Backgrounds */
-.bg-warm {
-    background-color: var(--brand-light-bg);
+/* When clicking an input */
+input:focus {
+    border-color: #C5A028;
+    box-shadow: 0 0 5px rgba(197, 160, 40, 0.25);
 }
 
-/* Footer Styling */
-footer {
-    background-color: var(--brand-dark);
-    color: #cccccc;
+/* Main buttons */
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+    border: 1px solid #C5A028;
+    border-radius: 6px;
+    background: #C5A028;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
 }
 
-footer a {
-    color: #ffffff;
-    text-decoration: none;
+/* Hover effect */
+button:hover {
+    background: #AA8619;
+    border-color: #AA8619;
+    transform: translateY(-1px);
 }
 
-footer a:hover {
-    color: var(--brand-gold);
+/* Create Account button */
+#loginPage button[type="button"] {
+    background: #FFFFFF;
+    color: #B79524;
+    border: 1px solid #C5A028;
+}
+
+#loginPage button[type="button"]:hover {
+    background: #C5A028;
+    color: #FFFFFF;
+}
+
+/* Back to Login button */
+#registerPage button[type="button"] {
+    background: #FFFFFF;
+    color: #68734A;
+    border: 1px solid #68734A;
+}
+
+#registerPage button[type="button"]:hover {
+    background: #68734A;
+    color: #FFFFFF;
+}
+
+/* Hidden registration/login section */
+[hidden] {
+    display: none !important;
+}
+
+/* Small decorative line */
+#loginPage h1::after,
+#registerPage h1::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    background: #C5A028;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Mobile-friendly design */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    #loginPage,
+    #registerPage {
+        padding: 28px 22px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
 }
